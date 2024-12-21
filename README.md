@@ -44,4 +44,3 @@ To get started with any of the projects, follow these simple steps:
 
 - **Email**: [nachiketshinde2004@gmail.com](mailto:nachiketshinde2004@gmail.com)
 - **GitHub**: [Nachiket858](https://github.com/Nachiket858)
-```
