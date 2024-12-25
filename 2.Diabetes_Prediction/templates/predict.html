@@ -5,139 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diabetes Prediction</title>
     <style>
-        html, body {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            height: 100%;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(45deg, #FF6F61, #FF7F50); /* Match home page gradient */
-            overflow-y: auto; /* Allow vertical scrolling */
-            color: #fff;
-        }
-        .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-            box-sizing: border-box;
-            padding: 20px;
+            height: 100vh;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 500px;
             width: 100%;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
         h1 {
-            color: #fff;
-            font-size: 36px;
-            margin-bottom: 30px;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #444;
         }
-        .form-container {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 600px;
-            text-align: left;
-            backdrop-filter: blur(5px);
-            margin-bottom: 30px;
+        form {
+            display: flex;
+            flex-direction: column;
         }
         label {
-            display: block;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-weight: bold;
-            color: #fff;
         }
         input {
-            width: 100%;
-            padding: 12px;
             margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
+            padding: 10px;
             font-size: 16px;
-            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
         input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: #007bff;
             color: white;
             border: none;
             cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 15px;
-            width: 100%;
-            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px;
         }
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #0056b3;
         }
         .prediction {
-            background-color: rgba(255, 99, 71, 0.7); /* Tomato color with transparency */
-            color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 30px;
-            width: 100%;
-            max-width: 600px;
-            text-align: center;
-            font-weight: bold;
-            box-sizing: border-box;
-            position: relative;
-        }
-        .prediction p {
-            margin: 0;
-        }
-        .button {
-            background-color: #721c24;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            text-decoration: none;
-        }
-        .button:hover {
-            background-color: #f5c6cb;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8d7da;
             color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Diabetes Risk Prediction</h1>
-        <div class="form-container">
-            <form method="POST">
-                <label for="pregnancies">Pregnancies:</label>
-                <input type="number" name="pregnancies" min="0" max="17" placeholder="Enter number of pregnancies" required><br>
+        <form method="POST">
+            <label for="pregnancies">Pregnancies:</label>
+            <input type="number" name="pregnancies" placeholder="Enter number of pregnancies">
 
-                <label for="glucose">Glucose:</label>
-                <input type="number" name="glucose" min="44" max="199" placeholder="Enter glucose level" required><br>
+            <label for="glucose">Glucose:</label>
+            <input type="number" name="glucose" placeholder="Enter glucose level">
 
-                <label for="blood_pressure">Blood Pressure:</label>
-                <input type="number" name="blood_pressure" min="24" max="122" placeholder="Enter blood pressure" required><br>
+            <label for="blood_pressure">Blood Pressure:</label>
+            <input type="number" name="blood_pressure" placeholder="Enter blood pressure">
 
-                <label for="skin_thickness">Skin Thickness:</label>
-                <input type="number" name="skin_thickness" min="7" max="99" placeholder="Enter skin thickness" required><br>
+            <label for="skin_thickness">Skin Thickness:</label>
+            <input type="number" name="skin_thickness" placeholder="Enter skin thickness">
 
-                <label for="insulin">Insulin:</label>
-                <input type="number" name="insulin" min="14" max="846" placeholder="Enter insulin level" required><br>
+            <label for="insulin">Insulin:</label>
+            <input type="number" name="insulin" placeholder="Enter insulin level">
 
-                <label for="bmi">BMI:</label>
-                <input type="number" name="bmi" min="18.2" max="67.1" placeholder="Enter BMI" required><br>
+            <label for="bmi">BMI:</label>
+            <input type="number" name="bmi" placeholder="Enter BMI">
 
-                <label for="diabetes_pedigree">Diabetes Pedigree Function:</label>
-                <input type="number" name="diabetes_pedigree" min="0.078" max="2.42" placeholder="Enter diabetes pedigree function" required><br>
+            <label for="diabetes_pedigree">Diabetes Pedigree Function:</label>
+            <input type="number" name="diabetes_pedigree" placeholder="Enter diabetes pedigree function">
 
-                <label for="age">Age:</label>
-                <input type="number" name="age" min="1" max="100" placeholder="Enter age" required><br>
+            <label for="age">Age:</label>
+            <input type="number" name="age" placeholder="Enter age">
 
-                <input type="submit" value="Predict">
-            </form>
-        </div>
+            <input type="submit" value="Predict">
+        </form>
 
         {% if prediction %}
             <div class="prediction">
                 <p>{{ prediction }}</p>
-                <a href="{{ url_for('predict') }}" class="button">Close</a>
             </div>
         {% endif %}
     </div>
