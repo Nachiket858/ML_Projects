@@ -19,8 +19,8 @@ myenv
 *.swo
 
 # Jupyter Notebook
-.ipynb_checkpoints/
-*.ipynb
+# .ipynb_check
+# *.ipynb
 
 # Data files
 # *.csv
